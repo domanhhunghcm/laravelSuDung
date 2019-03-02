@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Category extends Migration
+class CategoryCoLen extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class Category extends Migration
     {
         if (!Schema::hasTable('category')) {
             Schema::create('category', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->timestamps();

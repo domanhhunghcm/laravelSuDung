@@ -15,7 +15,7 @@ class CreateCategoryProductTable extends Migration
     {
         if (!Schema::hasTable('category_product')) {
             Schema::create('category_product', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
 
             $table->integer('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')
